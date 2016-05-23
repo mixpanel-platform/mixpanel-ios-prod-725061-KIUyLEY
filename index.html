@@ -51,10 +51,10 @@
       };
       var resultObject = {'Unique': {}, 'Total': {}};
       MP.api.segment(eventName, totalParams).done(function(totalResults) {
-        resultObject.Total = totalResults.values();
+        resultObject.Total = totalResults.values()[eventName];
         console.log(resultObject);
         MP.api.segment(eventName, uniqueParams).done(function(uniqueResults) {
-          resultObject.Unique = uniqueResults.values();
+          resultObject.Unique = uniqueResults.values()[eventName];
           console.log(resultObject);
           chart.MPChart('setData', resultObject);
         })
