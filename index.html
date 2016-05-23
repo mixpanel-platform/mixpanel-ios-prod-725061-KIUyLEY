@@ -38,16 +38,16 @@
         chartType: 'line',
       });
       var totalParams = {
-        from: moment().subtract('30', 'days'),
+        from: moment().subtract('4', 'days'),
         to: moment(),
         type: 'general',
-        unit: 'day',
+        unit: 'hour',
       };
       var uniqueParams = {
-        from: moment().subtract('30', 'days'),
+        from: moment().subtract('4', 'days'),
         to: moment(),
         type: 'unique',
-        unit: 'day',
+        unit: 'hour',
       };
       var resultObject = {'Unique': {}, 'Total': {}};
       MP.api.segment(eventName, totalParams).done(function(totalResults) {
